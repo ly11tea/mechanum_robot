@@ -1,0 +1,21 @@
+scp -prq /home/siti/mechanum_ws/src/mechanum_robot/cmd_vel_publisher aicrobo@192.168.1.178:~/catkin_ws/src/mechanum_robot
+
+scp -prq /home/siti/mechanum_ws/src/mechanum_robot/mechanum_control_odom aicrobo@192.168.1.178:~/catkin_ws/src/mechanum_robot
+
+ssh aicrobo@192.168.1.178
+
+roslaunch mechanum_common hardware.launch
+roslaunch cmd_vel_publisher cmd_vel_publisher_diff.launch
+roslaunch mechanum_common mechanum_amcl.launch 
+
+
+scp -prq /home/siti/mechanum_ws/src/mechanum_robot/mechanum_common/launch/mechanum_amcl.launch aicrobo@192.168.1.178:~/catkin_ws/src/mechanum_robot/mechanum_common/launch
+
+
+scp -prq /home/siti/mechanum_ws/src/mechanum_robot/mechanum_common/config aicrobo@192.168.1.178:~/catkin_ws/src/mechanum_robot/mechanum_common/launch
+
+2015-08-27
+sudo date -s "2015-08-27 16:58:00"
+ssh ubuntu@192.168.1.156
+
+scp -prq /home/siti/mechanum_ws/src/mechanum_robot/mechanum_common/launch/hardware.launch ubuntu@192.168.1.156:~/mechanum_ws/src/mechanum_robot/mechanum_common/launch/

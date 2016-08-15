@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  
+  <!--crop the scan from angle_min to angle_max 
+    <node pkg="laser_crop" type="laser_crop_node" name="laser_crop_node" output="screen"> 
+      <param name="angle_min_cropped" type="double" value="90.0" /> 
+      <param name="angle_max_cropped" type="double" value="-90.0" /> 
+      <param name="scan_sub_topic" type="string" value="scan_rplidar" /> 
+      <param name="scan_pub_topic" type="string" value="scan_cropped" /> 
+   </node>
+   -->
+   
+   <node pkg="laser_filters" type="scan_to_scan_filter_chain" output="screen" name="laser_filter">
+      <remap from="scan" to="scan_rplidar" />
+      <rosparam command="load" file="$(find rplidar_ros)/launch/ShadowFilter.yaml" />
+</node>
+   
+  
+  
+  
+  
+</launch>

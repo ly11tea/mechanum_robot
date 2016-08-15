@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+   
+  <node pkg="mechanum_control_odom" type="mechanum_control_odom_node1" name="mechanum_control_odom1" output="screen"> 
+      <param name="arduino_serial" type="string" value="/dev/ttyUSB0" /> 
+
+   </node>
+</launch>

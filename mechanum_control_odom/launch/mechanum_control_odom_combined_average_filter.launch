@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<launch>
+   
+  <node pkg="mechanum_control_odom" type="mechanum_control_odom_average_filter" name="mechanum_control_odom_average_filter" output="screen"> 
+      <param name="arduino_serial" type="string" value="/dev/ttyUSB0" /> 
+      <param name="itsDebugMode" type="bool" value="false" /> 
+      
+
+   </node>
+   
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find mechanum_control_odom)/rviz/mechanum_odom.rviz"/> 
+  
+</launch>

@@ -1,0 +1,14 @@
+<!-- launch-->
+<launch>
+
+  <node pkg="mechanum_control_odom" type="odom_test" name="odom_test" >
+    <param name="straight_or_side" type="bool" value="false" /> 
+    <param name="loop_rate" type="double" value="20.0" /> 
+    <param name="constant_speed" type="double" value="0.2" /> 
+    <param name="stop_at_displacement" type="double" value="1.5" /> 
+  </node> 
+ 
+
+</launch>
+
+

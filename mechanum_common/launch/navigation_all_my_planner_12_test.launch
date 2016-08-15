@@ -1,0 +1,6 @@
+<!---->
+<launch>
+  <include file="$(find mechanum_common)/launch/hardware_with_filters.launch" />
+  <include file="$(find mechanum_common)/launch/mechanum_amcl.launch" />
+    <include file="$(find my_planner)/launch/my_planner12_test.launch" />
+</launch>

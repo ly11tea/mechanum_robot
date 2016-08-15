@@ -1,0 +1,14 @@
+<!--xml-->
+<launch>
+  <node pkg="my_planner" type="my_planner_node3" respawn="false" name="my_planner" output="screen">
+    <rosparam file="$(find my_planner)/launch/waypoints_and_connections.yaml" command="load" />
+    <param name="global_frame" type="string" value="map" /> 
+    <param name="robot_base_frame" type="string" value="base_link" /> 
+    <param name="transform_tolerance" type="double" value="0.8" /> 
+    <param name="control_frequency" type="double" value="10.0" /> 
+    <param name="cmd_pub_topic" type="string" value="cmd_vel" />       
+    <param name="goal_sub_topic" type="string" value="/move_base_simple/goal" />     
+ </node>
+  
+
+</launch>

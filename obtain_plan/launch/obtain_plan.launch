@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<launch>
+   
+  <node pkg="obtain_plan" type="obtain_plan_node" name="obtain_plan" output="screen"> 
+      <param name="start_x"  type="double" value="-0.001" />    
+      <param name="start_y"  type="double" value="0.126" /> 
+      <param name="start_th" type="double" value="-0.036" /> 
+      <param name="goal_x"  type="double" value="5.955" />     
+      <param name="goal_y"  type="double" value="0.147" /> 
+      <param name="goal_th" type="double" value="1.556" />  
+      <param name="file_name" type="string" value="/home/ubuntu/obtained_plan1.txt" />          
+   </node>
+</launch>

@@ -1,0 +1,8 @@
+<!---->
+<launch>
+  <include file="$(find mechanum_common)/launch/hardware_with_filters.launch" />
+  <include file="$(find mechanum_common)/launch/mechanum_amcl.launch" />
+  <include file="$(find mechanum_common)/launch/move_base.launch" /> 
+  <include file="$(find cmd_vel_publisher)/launch/cmd_vel_publisher_take_over.launch" />
+  <!--include file="$(find call_clear_costmap_srv)/launch/call_clear_costmap_srv.launch" /--> 
+</launch>

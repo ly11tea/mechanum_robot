@@ -1,0 +1,25 @@
+<!--xml-->
+<launch>
+  <node pkg="my_planner" type="my_planner_change_topic_node" respawn="false" name="my_planner" output="screen">
+    <rosparam file="$(find my_planner)/launch/waypoints_and_connections.yaml" command="load" />
+    <param name="global_frame" type="string" value="map" /> 
+    <param name="robot_base_frame" type="string" value="base_link" /> 
+    <param name="transform_tolerance" type="double" value="0.8" /> 
+    <param name="control_frequency" type="double" value="10.0" /> 
+    <param name="cmd_pub_topic" type="string" value="my_planner_cmd_vel" />       
+    <param name="goal_sub_topic" type="string" value="/move_base_simple/goal" />    
+    <param name="scan_sub_topic" type="string" value="scan" />    
+    <param name="cloud_pub_topic" type="string" value="cloud" /> 
+    <param name="queue_size_laser_scan" type="int" value="5" /> 
+    <param name="tol_obst_Forw" type="double" value="0.8" /> 
+    <param name="tol_obst_lat" type="double" value="0.2" />    
+    <param name="online_angle_adj" type="double" value="0.07" />       
+ </node>
+  
+  
+    <node pkg="topic_tools" type="mux" name="cmd_vel_mux" args="cmd_vel my_planner_cmd_vel base_cmd_vel mux:=mux_cmd_vel" output="screen">
+     
+    </node>   
+  
+    
+</launch>

@@ -1,0 +1,45 @@
+<!--xml-->
+<launch>
+  <arg name="scan_topic" default="/scan"/> 
+  <node pkg="my_planner" type="my_planner_main15_test_pid_node" respawn="false" name="my_planner" output="screen">
+    <rosparam file="$(find my_planner)/launch/waypoints_and_connections.yaml" command="load" />
+    <param name="global_frame" type="string" value="map" /> 
+    <param name="robot_base_frame" type="string" value="base_link" /> 
+    <param name="transform_tolerance" type="double" value="0.8" /> 
+    <param name="control_frequency" type="double" value="10.0" /> 
+    <param name="cmd_pub_topic" type="string" value="cmd_vel" />       
+    <param name="goal_sub_topic" type="string" value="/move_base_simple/goal" />    
+    <param name="scan_sub_topic" type="string" value="$(arg scan_topic)" />    
+    <param name="cloud_pub_topic" type="string" value="cloud" /> 
+    <param name="queue_size_laser_scan" type="int" value="5" />   
+    <param name="online_angle_adj" type="double" value="0.07" /> 
+    
+    <param name="tol_obst_Forw" type="double" value="0.8" /> 
+    <param name="tol_obst_lat" type="double" value="0.2" />  
+    
+    <param name="DIST_TOLE" type="double" value="0.15" />   
+    <param name="DIR_TOLE" type="double" value="0.2" />  
+    <param name="NORM_SPEED" type="double" value="0.22" /> 
+    <param name="MAX_LAT_SPEED" type="double" value="0.05" />  
+    <param name="MIN_LAT_SPEED" type="double" value="0.04" />  
+    <param name="LAT_DIST_TOL" type="double" value="0.05" />       
+        
+    <param name="DIR_TOLE_LOCAL" type="double" value="0.15" />  
+    <param name="DIST_TOLE_LOCAL" type="double" value="0.15" />     
+    <param name="NORM_SPEED_LOCAL" type="double" value="0.2" /> 
+     
+    <param name="BIG_REGU" type="double" value="0.6" />  
+    <param name="SMALL_REGU" type="double" value="0.03" />  
+    <param name="MED_REGU" type="double" value="0.0" />  
+
+    <param name="KP" type="double" value="0.2" />     
+    <param name="KI" type="double" value="0.05" /> 
+    <param name="KD" type="double" value="0.0" />  
+    <param name="MIN_Y" type="double" value="-0.6" />  
+    <param name="MAX_Y" type="double" value="0.6" />     
+    
+             
+ </node>
+  
+
+</launch>

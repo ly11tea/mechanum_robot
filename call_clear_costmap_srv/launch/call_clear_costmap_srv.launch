@@ -1,0 +1,4 @@
+<!---->
+<launch>
+ <node pkg="call_clear_costmap_srv" type="call_clear_costmap_srv_node" name="call_clear_costmap_srv" output="screen"/> 
+</launch>

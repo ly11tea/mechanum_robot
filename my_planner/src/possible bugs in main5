@@ -1,0 +1,17 @@
+line 1024:	next_Wp = pts[nextWpt]; nextWpt may exceed the size of pts;
+line 1031: 		double tmp_sqrt_a_b = sqrt(A*A + B*B); this value may be zero
+
+
+
+2015-11-18
+creat a new thread for doing the obstacle avoidance
+开线程
+
+利用 mutex 
+
+boost::unique_lock
+
+boost::mutex planner_mutex_;
+boost::condition_variable planner_cond_;
+
+boost::recursive_mutex configuration_mutex_;

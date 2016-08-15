@@ -1,0 +1,9 @@
+2015-11-20
+my_planner8: 导航，遇到障碍物停止，把wpts都显示出来了
+
+my_planner9: 导航，避开障碍物，把wpts都显示出来,除local waypoints外
+
+2015-11-21
+my_planner10:
+
+

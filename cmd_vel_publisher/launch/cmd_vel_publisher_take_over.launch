@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+   
+  <node pkg="cmd_vel_publisher" type="cmd_vel_publisher_take_over" name="cmd_vel_publisher" output="screen"> 
+      <param name="frequency" type="double" value="0.2" /> 
+      <param name="Max_Amplitude" type="double" value="0.0" /> 
+      <param name="Max_constant_V" type="double" value="0.5" /> 
+      <param name="delta_v" type="double" value="0.01" /> 
+
+      <param name="Speed_Noise_Variance" type="double" value="0.0" />      
+      <param name="Herz" type="double" value="10.0" />  
+      <param name="cmd_sub_topic" type="string" value="cmd_move_base"/>
+      <param name="cmd_pub_topic" type="string" value="cmd_vel"/>
+      <!--remap from="cmd_vel" to="/pioneer/cmd_vel"/-->
+   </node>
+</launch>

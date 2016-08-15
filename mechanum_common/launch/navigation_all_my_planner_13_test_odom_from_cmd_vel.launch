@@ -1,0 +1,30 @@
+<!---->
+<launch>
+
+  <param name="robot_description" textfile="$(find mechanum_common)/urdf/mechanum_robot.urdf" />
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" /> 
+
+
+  <node pkg="mechanum_control_odom" type="mechanum_control_node" name="mechanum_control_node" >
+      <param name="arduino_serial" type="string" value="/dev/ttyUSB0" /> 
+      <param name="itsDebugMode" type="bool" value="false" /> 
+      <param name="frameBase" type="string" value="base_footprint" /> 
+      
+  </node>
+
+  <include file="$(find rplidar_ros)/launch/rplidar_with_filters.launch" />
+
+
+  <node pkg="odom_from_cmd_vel" type="odom_from_cmd_vel_node" respawn="false" name="odom_from_cmd_vel_node" output="screen">
+    <param name="frameBase" type="string" value="base_footprint" /> 
+    <param name="cmd_vel_sub_name" type="string" value="cmd_vel" />
+    <param name="loop_rate" type="double" value="10.0" />       
+  </node>
+  
+  <include file="$(find mechanum_common)/launch/mechanum_amcl.launch" />
+  
+  
+  
+  <include file="$(find my_planner)/launch/my_planner13_test.launch" />
+</launch>

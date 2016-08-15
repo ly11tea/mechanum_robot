@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+  <node pkg="laser_crop" type="laser_crop_node" name="laser_crop_node" output="screen"> 
+      <param name="angle_min_cropped" type="double" value="90.0" /> 
+      <param name="angle_max_cropped" type="double" value="-90.0" /> 
+      <param name="scan_sub_topic" type="string" value="scan_rplidar" /> 
+      <param name="scan_pub_topic" type="string" value="scan" /> 
+   </node>
+</launch>
