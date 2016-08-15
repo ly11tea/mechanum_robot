@@ -10,7 +10,7 @@
 
       <param name="Speed_Noise_Variance" type="double" value="0.0" />      
       <param name="Herz" type="double" value="10.0" />  
-      <param name="cmd_sub_topic" type="string" value="cmd_move_base"/>
+      <param name="cmd_sub_topic" type="string" value="base_cmd_vel"/>
       <param name="cmd_pub_topic" type="string" value="cmd_vel"/>
       <!--remap from="cmd_vel" to="/pioneer/cmd_vel"/-->
    </node>

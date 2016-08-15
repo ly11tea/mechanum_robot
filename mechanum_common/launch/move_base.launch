@@ -9,7 +9,7 @@
     <rosparam file="$(find mechanum_common)/config/move_base/move_base_params.yaml" command="load" />
     
     <remap from="cmd_vel" to="base_cmd_vel"/>
-    <remap from="move_base_simple/goal" to="base_goal"/>
+    <!--<remap from="move_base_simple/goal" to="base_goal"/>-->
    
   </node>
   
