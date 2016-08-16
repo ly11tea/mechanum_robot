@@ -1,8 +1,8 @@
 <!---->
 <launch>
 	
-     <node name="map_server" pkg="map_server" type="map_server" args="/home/aicrobo/catkin_ws/src/mechanum_robot/map/306_1.yaml">  
-     </node>
+     <!--<node name="map_server" pkg="map_server" type="map_server" args="/home/aicrobo/catkin_ws/src/mechanum_robot/map/306_2.yaml">  
+     </node>-->
      
   <arg name="use_map_topic"   default="true"/>
   <arg name="scan_topic"      default="/scan"/> 
