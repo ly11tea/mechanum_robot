@@ -1,0 +1,12 @@
+<!---->
+
+<launch>
+	<arg name="map" default="309_1.yaml" />
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find mechanum_common)/map/$(arg map)">  
+  </node>
+  <!--<include file="$(find mechanum_common)/launch/hardware_with_filters.launch" /-->
+  <include file="$(find mechanum_common)/launch/mechanum_amcl_306.launch" />
+  <include file="$(find mechanum_common)/launch/move_base_306.launch" /> 
+  <!--include file="$(find cmd_vel_publisher)/launch/cmd_vel_publisher_take_over.launch" /-->
+  <!--include file="$(find call_clear_costmap_srv)/launch/call_clear_costmap_srv.launch" /--> 
+</launch>
